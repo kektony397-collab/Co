@@ -1,4 +1,5 @@
 
+
 import React, { useState, useCallback } from 'react';
 import { Header } from './Header';
 import { FareForm } from './FareForm';
@@ -38,7 +39,7 @@ function App() {
     const total = calculateFare(data);
     setCalculatedFare(total);
 
-    const newRecord: FareRecord = {
+    const newRecord: Omit<FareRecord, 'id'> = {
       ...data,
       total,
       timestamp: Date.now(),
@@ -66,7 +67,7 @@ function App() {
   }, [saveProfile, showToast]);
 
   const handleGenerateContract = useCallback(async (data: ContractData) => {
-    const newContract: ContractRecord = {
+    const newContract: Omit<ContractRecord, 'id'> = {
         ...data,
         timestamp: Date.now()
     };

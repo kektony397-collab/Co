@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect, useCallback } from 'react';
 import { FareRecord, ContractRecord } from '../types';
 
@@ -71,7 +72,7 @@ export const useIndexedDB = () => {
     }
   }, [db, loadHistory, loadContracts]);
 
-  const saveFare = useCallback(async (fareData: FareRecord) => {
+  const saveFare = useCallback(async (fareData: Omit<FareRecord, 'id'>) => {
     if (!db) return;
     const transaction = db.transaction(FARE_STORE_NAME, 'readwrite');
     const store = transaction.objectStore(FARE_STORE_NAME);
@@ -89,7 +90,7 @@ export const useIndexedDB = () => {
     });
   }, [db, loadHistory]);
 
-  const saveContract = useCallback(async (contractData: ContractRecord): Promise<ContractRecord> => {
+  const saveContract = useCallback(async (contractData: Omit<ContractRecord, 'id'>): Promise<ContractRecord> => {
     if (!db) {
       return Promise.reject(new Error("Database not available."));
     }

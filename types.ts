@@ -1,4 +1,5 @@
 
+
 export interface FareInput {
   distance: number;
   duration: number;
@@ -8,7 +9,7 @@ export interface FareInput {
 }
 
 export interface FareRecord extends FareInput {
-  id?: number;
+  id: number;
   total: number;
   timestamp: number;
 }
@@ -45,6 +46,6 @@ export interface ContractData {
 }
 
 export interface ContractRecord extends ContractData {
-  id?: number;
+  id: number;
   timestamp: number;
 }
