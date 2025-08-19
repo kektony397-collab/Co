@@ -3,9 +3,9 @@
 import React, { useState, useCallback } from 'react';
 import { Header } from './Header';
 import { FareForm } from './FareForm';
-import { ResultDisplay } from './ResultDisplay';
+import { ResultDisplay } from '../ResultDisplay';
 import { HistoryList } from './HistoryList';
-import { Toast } from './Toast';
+import { Toast } from '../Toast';
 import { Profile } from './Profile';
 import { ContractForm } from './ContractForm';
 import { ContractPreview } from './ContractPreview';
